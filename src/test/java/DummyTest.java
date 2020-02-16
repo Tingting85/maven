@@ -8,4 +8,10 @@ public class DummyTest {
     void testDummy(){
         assertEquals(true,Dummy.dummyMethod());
     }
+    @Test
+    void testDummy2(){
+        assertEquals(false,Dummy.dummyMethod2());
+    }
 }
+
+
