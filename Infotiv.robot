@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation           This is information about testsuite for Infotiv car rental
-Resource             ../Resources/keywords.robot
+Resource                keywords.robot
 Library                 SeleniumLibrary
 Library                 Collections
 Test Setup              Begin Web Test
