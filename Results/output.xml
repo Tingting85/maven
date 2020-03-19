@@ -1,0 +1,1514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200302 23:08:36.555" generator="Robot 3.1.2 (Python 2.7.16 on linux2)">
+<suite source="/home/ting/PycharmProjects/Labb3/Tests" id="s1" name="Tests">
+<suite source="/home/ting/PycharmProjects/Labb3/Tests/Infotiv.robot" id="s1-s1" name="Infotiv">
+<test id="s1-s1-t1" name="Login Success">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:08:36.688" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:08:38.821" starttime="20200302 23:08:36.688"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:08:38.930" starttime="20200302 23:08:38.821"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:08:38.932" starttime="20200302 23:08:38.931"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:38.932" starttime="20200302 23:08:36.687"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:08:38.935" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:08:40.354" starttime="20200302 23:08:38.935"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:40.354" starttime="20200302 23:08:38.934"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:08:42.406" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:08:42.406" starttime="20200302 23:08:40.356"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:08:42.408" starttime="20200302 23:08:42.407"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:42.408" starttime="20200302 23:08:40.355"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:42.409" starttime="20200302 23:08:38.934"></status>
+</kw>
+<kw name="When Login" library="keywords">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Enter Email" library="keywords">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200302 23:08:42.413" level="INFO">Typing text 'tingting.jin@iths.se' into text field 'id:email'.</msg>
+<status status="PASS" endtime="20200302 23:08:45.610" starttime="20200302 23:08:42.412"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:45.610" starttime="20200302 23:08:42.411"></status>
+</kw>
+<kw name="Enter Password" library="keywords">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200302 23:08:45.612" level="INFO">Typing text 'tingting' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20200302 23:08:48.744" starttime="20200302 23:08:45.611"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:48.744" starttime="20200302 23:08:45.610"></status>
+</kw>
+<kw name="Click Login Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:login</arg>
+</arguments>
+<msg timestamp="20200302 23:08:48.746" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" endtime="20200302 23:08:54.492" starttime="20200302 23:08:48.746"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:54.492" starttime="20200302 23:08:48.745"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:54.493" starttime="20200302 23:08:42.409"></status>
+</kw>
+<kw name="Then Verify Login Success" library="keywords">
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<arguments>
+<arg>id:welcomePhrase</arg>
+<arg>You are signed in as Tingting</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:08:56.541" starttime="20200302 23:08:54.494"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:56.541" starttime="20200302 23:08:54.493"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:08:57.607" starttime="20200302 23:08:56.543"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:08:57.608" starttime="20200302 23:08:56.542"></status>
+</kw>
+<tags>
+<tag>Header Log in</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:08:57.608" critical="yes" starttime="20200302 23:08:36.687"></status>
+</test>
+<test id="s1-s1-t2" name="Login Empty Password">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:08:57.611" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:09:00.674" starttime="20200302 23:08:57.611"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:09:01.787" starttime="20200302 23:09:00.676"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:01.789" starttime="20200302 23:09:01.787"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:01.789" starttime="20200302 23:08:57.610"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:01.792" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:09:03.184" starttime="20200302 23:09:01.792"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:03.185" starttime="20200302 23:09:01.791"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:09:05.241" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:09:05.241" starttime="20200302 23:09:03.186"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:05.243" starttime="20200302 23:09:05.242"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:05.243" starttime="20200302 23:09:03.185"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:05.244" starttime="20200302 23:09:01.790"></status>
+</kw>
+<kw name="When Login" library="keywords">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+<arg>${empty}</arg>
+</arguments>
+<kw name="Enter Email" library="keywords">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:05.247" level="INFO">Typing text 'tingting.jin@iths.se' into text field 'id:email'.</msg>
+<status status="PASS" endtime="20200302 23:09:08.435" starttime="20200302 23:09:05.246"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:08.436" starttime="20200302 23:09:05.246"></status>
+</kw>
+<kw name="Enter Password" library="keywords">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:08.440" level="INFO">Typing text '' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20200302 23:09:11.557" starttime="20200302 23:09:08.439"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:11.557" starttime="20200302 23:09:08.437"></status>
+</kw>
+<kw name="Click Login Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:login</arg>
+</arguments>
+<msg timestamp="20200302 23:09:11.559" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" endtime="20200302 23:09:16.688" starttime="20200302 23:09:11.559"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:16.688" starttime="20200302 23:09:11.558"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:16.688" starttime="20200302 23:09:05.244"></status>
+</kw>
+<kw name="Then Verify Invalid Password" library="keywords">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>CSS:#password:invalid</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:18.734" starttime="20200302 23:09:16.689"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:18.734" starttime="20200302 23:09:16.688"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:09:19.794" starttime="20200302 23:09:18.735"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:19.794" starttime="20200302 23:09:18.735"></status>
+</kw>
+<tags>
+<tag>Header Log in</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:09:19.795" critical="yes" starttime="20200302 23:08:57.610"></status>
+</test>
+<test id="s1-s1-t3" name="Login Wrong Password">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:19.800" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:09:22.872" starttime="20200302 23:09:19.799"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:09:23.980" starttime="20200302 23:09:22.873"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:23.981" starttime="20200302 23:09:23.980"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:23.982" starttime="20200302 23:09:19.798"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:23.985" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:09:25.410" starttime="20200302 23:09:23.985"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:25.411" starttime="20200302 23:09:23.984"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:09:27.470" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:09:27.470" starttime="20200302 23:09:25.412"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:27.470" starttime="20200302 23:09:27.470"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:27.471" starttime="20200302 23:09:25.411"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:27.471" starttime="20200302 23:09:23.983"></status>
+</kw>
+<kw name="When Login" library="keywords">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+<arg>12345678</arg>
+</arguments>
+<kw name="Enter Email" library="keywords">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:27.473" level="INFO">Typing text 'tingting.jin@iths.se' into text field 'id:email'.</msg>
+<status status="PASS" endtime="20200302 23:09:30.660" starttime="20200302 23:09:27.472"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:30.661" starttime="20200302 23:09:27.471"></status>
+</kw>
+<kw name="Enter Password" library="keywords">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:30.663" level="INFO">Typing text '12345678' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20200302 23:09:33.807" starttime="20200302 23:09:30.663"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:33.807" starttime="20200302 23:09:30.661"></status>
+</kw>
+<kw name="Click Login Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:login</arg>
+</arguments>
+<msg timestamp="20200302 23:09:33.809" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" endtime="20200302 23:09:39.450" starttime="20200302 23:09:33.809"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:39.450" starttime="20200302 23:09:33.808"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:39.451" starttime="20200302 23:09:27.471"></status>
+</kw>
+<kw name="Then Verify Login Error" library="keywords">
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>id:signInError</arg>
+<arg>Wrong e-mail or password</arg>
+</arguments>
+<msg timestamp="20200302 23:09:41.500" level="INFO">Element 'id:signInError' contains text 'Wrong e-mail or password'.</msg>
+<status status="PASS" endtime="20200302 23:09:41.501" starttime="20200302 23:09:39.452"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:41.501" starttime="20200302 23:09:39.451"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:09:42.562" starttime="20200302 23:09:41.503"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:42.563" starttime="20200302 23:09:41.502"></status>
+</kw>
+<tags>
+<tag>Header Log in</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:09:42.563" critical="yes" starttime="20200302 23:09:19.796"></status>
+</test>
+<test id="s1-s1-t4" name="Set Valid Date">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:42.568" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:09:45.617" starttime="20200302 23:09:42.567"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:09:46.729" starttime="20200302 23:09:45.619"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:46.730" starttime="20200302 23:09:46.729"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:46.730" starttime="20200302 23:09:42.566"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:46.733" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:09:48.152" starttime="20200302 23:09:46.732"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:48.153" starttime="20200302 23:09:46.731"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:09:50.209" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:09:50.210" starttime="20200302 23:09:48.153"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:09:50.211" starttime="20200302 23:09:50.210"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:50.212" starttime="20200302 23:09:48.153"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:50.212" starttime="20200302 23:09:46.731"></status>
+</kw>
+<kw name="When Set Start Date" library="keywords">
+<arguments>
+<arg>Now +2 day</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day month</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200302 23:09:50.217" level="INFO">${date} = ['03', '04']</msg>
+<status status="PASS" endtime="20200302 23:09:50.217" starttime="20200302 23:09:50.215"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:start</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:50.218" level="INFO">Typing text '['03', '04']' into text field 'id:start'.</msg>
+<status status="PASS" endtime="20200302 23:09:53.356" starttime="20200302 23:09:50.218"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:53.356" starttime="20200302 23:09:50.213"></status>
+</kw>
+<kw name="Set End Date" library="keywords">
+<arguments>
+<arg>Now +10 day</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day month</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200302 23:09:53.359" level="INFO">${date} = ['03', '12']</msg>
+<status status="PASS" endtime="20200302 23:09:53.359" starttime="20200302 23:09:53.358"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:end</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20200302 23:09:53.360" level="INFO">Typing text '['03', '12']' into text field 'id:end'.</msg>
+<status status="PASS" endtime="20200302 23:09:56.489" starttime="20200302 23:09:53.360"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:09:56.489" starttime="20200302 23:09:53.357"></status>
+</kw>
+<kw name="Then Verify Valid Date" library="keywords">
+<kw name="Continue Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:continue</arg>
+</arguments>
+<msg timestamp="20200302 23:09:56.492" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" endtime="20200302 23:10:02.241" starttime="20200302 23:09:56.492"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:02.242" starttime="20200302 23:09:56.491"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>What would you like to drive?</arg>
+</arguments>
+<msg timestamp="20200302 23:10:04.274" level="INFO">Current page contains text 'What would you like to drive?'.</msg>
+<status status="PASS" endtime="20200302 23:10:04.274" starttime="20200302 23:10:02.242"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:04.275" starttime="20200302 23:09:56.490"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:10:05.336" starttime="20200302 23:10:04.276"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:05.336" starttime="20200302 23:10:04.276"></status>
+</kw>
+<tags>
+<tag>Date Selection</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:10:05.336" critical="yes" starttime="20200302 23:09:42.564"></status>
+</test>
+<test id="s1-s1-t5" name="Invalid Start Date">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:05.342" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:10:08.403" starttime="20200302 23:10:05.341"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:10:09.513" starttime="20200302 23:10:08.404"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:09.514" starttime="20200302 23:10:09.513"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:09.514" starttime="20200302 23:10:05.340"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:09.515" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:10:10.973" starttime="20200302 23:10:09.515"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:10.974" starttime="20200302 23:10:09.515"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:10:13.024" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:10:13.024" starttime="20200302 23:10:10.975"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:13.026" starttime="20200302 23:10:13.024"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:13.026" starttime="20200302 23:10:10.974"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:13.026" starttime="20200302 23:10:09.514"></status>
+</kw>
+<kw name="When Set Start Date" library="keywords">
+<arguments>
+<arg>NOW - 1 day</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day month</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200302 23:10:13.029" level="INFO">${date} = ['03', '01']</msg>
+<status status="PASS" endtime="20200302 23:10:13.030" starttime="20200302 23:10:13.028"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:start</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:13.030" level="INFO">Typing text '['03', '01']' into text field 'id:start'.</msg>
+<status status="PASS" endtime="20200302 23:10:16.172" starttime="20200302 23:10:13.030"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:16.172" starttime="20200302 23:10:13.027"></status>
+</kw>
+<kw name="Continue Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:continue</arg>
+</arguments>
+<msg timestamp="20200302 23:10:16.174" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" endtime="20200302 23:10:21.317" starttime="20200302 23:10:16.174"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:21.317" starttime="20200302 23:10:16.173"></status>
+</kw>
+<kw name="Then Wait until element is visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>CSS:#start:invalid</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:23.366" starttime="20200302 23:10:21.318"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:10:24.428" starttime="20200302 23:10:23.368"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:24.428" starttime="20200302 23:10:23.366"></status>
+</kw>
+<tags>
+<tag>Date Selection</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:10:24.428" critical="yes" starttime="20200302 23:10:05.338"></status>
+</test>
+<test id="s1-s1-t6" name="Invalid End Date">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:24.433" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:10:27.496" starttime="20200302 23:10:24.432"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:10:28.607" starttime="20200302 23:10:27.497"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:28.608" starttime="20200302 23:10:28.608"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:28.609" starttime="20200302 23:10:24.431"></status>
+</kw>
+<kw name="Given Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:28.611" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:10:30.021" starttime="20200302 23:10:28.611"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:30.022" starttime="20200302 23:10:28.610"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:10:32.076" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:10:32.077" starttime="20200302 23:10:30.024"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:32.078" starttime="20200302 23:10:32.077"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:32.079" starttime="20200302 23:10:30.022"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:32.079" starttime="20200302 23:10:28.609"></status>
+</kw>
+<kw name="When Set End Date" library="keywords">
+<arguments>
+<arg>NOW + 32 day</arg>
+</arguments>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day month</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20200302 23:10:32.082" level="INFO">${date} = ['04', '04']</msg>
+<status status="PASS" endtime="20200302 23:10:32.082" starttime="20200302 23:10:32.081"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:end</arg>
+<arg>${date}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:32.083" level="INFO">Typing text '['04', '04']' into text field 'id:end'.</msg>
+<status status="PASS" endtime="20200302 23:10:35.211" starttime="20200302 23:10:32.082"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:35.211" starttime="20200302 23:10:32.080"></status>
+</kw>
+<kw name="Continue Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:continue</arg>
+</arguments>
+<msg timestamp="20200302 23:10:35.214" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" endtime="20200302 23:10:40.332" starttime="20200302 23:10:35.213"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:40.333" starttime="20200302 23:10:35.212"></status>
+</kw>
+<kw name="Then Wait until element is visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>CSS:#end:invalid</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:42.384" starttime="20200302 23:10:40.333"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:10:43.446" starttime="20200302 23:10:42.388"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:43.446" starttime="20200302 23:10:42.386"></status>
+</kw>
+<tags>
+<tag>Date Selection</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:10:43.447" critical="yes" starttime="20200302 23:10:24.430"></status>
+</test>
+<test id="s1-s1-t7" name="Book A Car and Cancel Booking">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:43.451" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:10:46.514" starttime="20200302 23:10:43.450"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:10:47.622" starttime="20200302 23:10:46.514"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:47.623" starttime="20200302 23:10:47.622"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:47.623" starttime="20200302 23:10:43.450"></status>
+</kw>
+<kw name="Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:47.626" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:10:49.078" starttime="20200302 23:10:47.625"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:49.078" starttime="20200302 23:10:47.625"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:10:51.128" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:10:51.128" starttime="20200302 23:10:49.080"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:10:51.130" starttime="20200302 23:10:51.128"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:51.130" starttime="20200302 23:10:49.079"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:51.130" starttime="20200302 23:10:47.624"></status>
+</kw>
+<kw name="Login" library="keywords">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Enter Email" library="keywords">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:51.134" level="INFO">Typing text 'tingting.jin@iths.se' into text field 'id:email'.</msg>
+<status status="PASS" endtime="20200302 23:10:54.318" starttime="20200302 23:10:51.133"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:54.318" starttime="20200302 23:10:51.132"></status>
+</kw>
+<kw name="Enter Password" library="keywords">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200302 23:10:54.321" level="INFO">Typing text 'tingting' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20200302 23:10:57.472" starttime="20200302 23:10:54.320"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:10:57.473" starttime="20200302 23:10:54.319"></status>
+</kw>
+<kw name="Click Login Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:login</arg>
+</arguments>
+<msg timestamp="20200302 23:10:57.475" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" endtime="20200302 23:11:03.198" starttime="20200302 23:10:57.474"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:03.198" starttime="20200302 23:10:57.473"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:03.198" starttime="20200302 23:10:51.131"></status>
+</kw>
+<kw name="Given Booking" library="keywords">
+<kw name="Continue Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:continue</arg>
+</arguments>
+<msg timestamp="20200302 23:11:03.204" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" endtime="20200302 23:11:08.898" starttime="20200302 23:11:03.204"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:08.898" starttime="20200302 23:11:03.200"></status>
+</kw>
+<kw name="Select Car" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-1']//button</arg>
+</arguments>
+<msg timestamp="20200302 23:11:08.900" level="INFO">Clicking button 'xpath://div[@id='ms-list-1']//button'.</msg>
+<status status="PASS" endtime="20200302 23:11:14.017" starttime="20200302 23:11:08.899"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${CAR DICT}</var>
+</assign>
+<msg timestamp="20200302 23:11:14.019" level="INFO">${CAR DICT} = {}</msg>
+<status status="PASS" endtime="20200302 23:11:14.019" starttime="20200302 23:11:14.017"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Audi</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:11:14.020" starttime="20200302 23:11:14.019"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Opel</arg>
+<arg>9</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:11:14.022" starttime="20200302 23:11:14.021"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Tesla</arg>
+<arg>7</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:11:14.023" starttime="20200302 23:11:14.022"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Volvo</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:11:14.024" starttime="20200302 23:11:14.023"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.choice(list(${CAR DICT}.keys()))</arg>
+<arg>modules=random</arg>
+</arguments>
+<assign>
+<var>${random_car}</var>
+</assign>
+<msg timestamp="20200302 23:11:14.026" level="INFO">${random_car} = Opel</msg>
+<status status="PASS" endtime="20200302 23:11:14.026" starttime="20200302 23:11:14.024"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${random_car}</arg>
+</arguments>
+<msg timestamp="20200302 23:11:14.027" level="INFO">Selecting checkbox 'Opel'.</msg>
+<status status="PASS" endtime="20200302 23:11:18.148" starttime="20200302 23:11:14.026"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-1']//button</arg>
+</arguments>
+<assign>
+<var>${car_name}</var>
+</assign>
+<msg timestamp="20200302 23:11:20.194" level="INFO">${car_name} = Opel</msg>
+<status status="PASS" endtime="20200302 23:11:20.194" starttime="20200302 23:11:18.148"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-2']//button</arg>
+</arguments>
+<msg timestamp="20200302 23:11:20.195" level="INFO">Clicking button 'xpath://div[@id='ms-list-2']//button'.</msg>
+<status status="PASS" endtime="20200302 23:11:25.327" starttime="20200302 23:11:20.195"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${CAR DICT}</arg>
+<arg>${car_name}</arg>
+</arguments>
+<assign>
+<var>${car_seats}</var>
+</assign>
+<msg timestamp="20200302 23:11:25.329" level="INFO">${car_seats} = 9</msg>
+<status status="PASS" endtime="20200302 23:11:25.329" starttime="20200302 23:11:25.327"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${car_seats}</arg>
+</arguments>
+<msg timestamp="20200302 23:11:25.330" level="INFO">Selecting checkbox '9'.</msg>
+<status status="PASS" endtime="20200302 23:11:29.451" starttime="20200302 23:11:25.329"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:carSelect1</arg>
+</arguments>
+<msg timestamp="20200302 23:11:29.452" level="INFO">Clicking button 'id:carSelect1'.</msg>
+<status status="PASS" endtime="20200302 23:11:32.925" starttime="20200302 23:11:29.452"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:32.925" starttime="20200302 23:11:08.898"></status>
+</kw>
+<kw name="Booking Confirm" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:cardNum</arg>
+<arg>1234567890123456</arg>
+</arguments>
+<msg timestamp="20200302 23:11:32.927" level="INFO">Typing text '1234567890123456' into text field 'id:cardNum'.</msg>
+<status status="PASS" endtime="20200302 23:11:36.103" starttime="20200302 23:11:32.927"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fullName</arg>
+<arg>ting</arg>
+</arguments>
+<msg timestamp="20200302 23:11:36.104" level="INFO">Typing text 'ting' into text field 'id:fullName'.</msg>
+<status status="PASS" endtime="20200302 23:11:39.237" starttime="20200302 23:11:36.103"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:cvc</arg>
+<arg>123</arg>
+</arguments>
+<msg timestamp="20200302 23:11:39.238" level="INFO">Typing text '123' into text field 'id:cvc'.</msg>
+<status status="PASS" endtime="20200302 23:11:42.362" starttime="20200302 23:11:39.238"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:confirm</arg>
+</arguments>
+<msg timestamp="20200302 23:11:42.363" level="INFO">Clicking button 'id:confirm'.</msg>
+<status status="PASS" endtime="20200302 23:11:47.736" starttime="20200302 23:11:42.362"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:47.736" starttime="20200302 23:11:32.926"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:47.737" starttime="20200302 23:11:03.199"></status>
+</kw>
+<kw name="When Go to My Page" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:mypage</arg>
+</arguments>
+<msg timestamp="20200302 23:11:47.740" level="INFO">Clicking button 'id:mypage'.</msg>
+<status status="PASS" endtime="20200302 23:11:55.118" starttime="20200302 23:11:47.739"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:11:55.118" starttime="20200302 23:11:47.737"></status>
+</kw>
+<kw name="Then Cancel Booking Verified" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://td[@id='licenseNumber1']</arg>
+</arguments>
+<assign>
+<var>${licensNr}</var>
+</assign>
+<msg timestamp="20200302 23:11:57.170" level="INFO">${licensNr} = BBE465</msg>
+<status status="PASS" endtime="20200302 23:11:57.170" starttime="20200302 23:11:55.120"></status>
+</kw>
+<kw name="Click Cancel" library="keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:unBook1</arg>
+</arguments>
+<msg timestamp="20200302 23:11:59.215" level="INFO">Element 'id:unBook1' is displayed.</msg>
+<status status="PASS" endtime="20200302 23:11:59.216" starttime="20200302 23:11:57.171"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:unBook1</arg>
+</arguments>
+<msg timestamp="20200302 23:11:59.217" level="INFO">Clicking button 'id:unBook1'.</msg>
+<status status="PASS" endtime="20200302 23:12:04.337" starttime="20200302 23:11:59.216"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:04.337" starttime="20200302 23:11:57.170"></status>
+</kw>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" endtime="20200302 23:12:07.354" starttime="20200302 23:12:04.338"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>Your car: ${licensNr} has been Returned</arg>
+</arguments>
+<msg timestamp="20200302 23:12:09.387" level="INFO">Current page contains text 'Your car: BBE465 has been Returned'.</msg>
+<status status="PASS" endtime="20200302 23:12:09.387" starttime="20200302 23:12:07.355"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:09.388" starttime="20200302 23:11:55.119"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:12:10.448" starttime="20200302 23:12:09.390"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:10.449" starttime="20200302 23:12:09.389"></status>
+</kw>
+<tags>
+<tag>Car Selection</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:12:10.449" critical="yes" starttime="20200302 23:10:43.448"></status>
+</test>
+<test id="s1-s1-t8" name="Car Booked Error Message">
+<kw type="setup" name="Begin Web Test" library="keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:10.457" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" endtime="20200302 23:12:13.509" starttime="20200302 23:12:10.455"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200302 23:12:14.622" starttime="20200302 23:12:13.510"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:14.622" starttime="20200302 23:12:14.622"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:14.623" starttime="20200302 23:12:10.453"></status>
+</kw>
+<kw name="Go to Web Page" library="keywords">
+<kw name="Load Page" library="keywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:14.624" level="INFO">Opening url 'http://rental7.infotiv.net/'</msg>
+<status status="PASS" endtime="20200302 23:12:16.006" starttime="20200302 23:12:14.624"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:16.006" starttime="20200302 23:12:14.623"></status>
+</kw>
+<kw name="Verify Page Loaded" library="keywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:title</arg>
+</arguments>
+<assign>
+<var>${link_title}</var>
+</assign>
+<msg timestamp="20200302 23:12:18.055" level="INFO">${link_title} = Infotiv Car Rental</msg>
+<status status="PASS" endtime="20200302 23:12:18.055" starttime="20200302 23:12:16.006"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${link_title}</arg>
+<arg>Infotiv Car Rental</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:18.057" starttime="20200302 23:12:18.056"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:18.057" starttime="20200302 23:12:16.006"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:18.058" starttime="20200302 23:12:14.623"></status>
+</kw>
+<kw name="Login" library="keywords">
+<arguments>
+<arg>${VALID EMAIL}</arg>
+<arg>${VALID PASSWORD}</arg>
+</arguments>
+<kw name="Enter Email" library="keywords">
+<arguments>
+<arg>${email}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:email</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:18.063" level="INFO">Typing text 'tingting.jin@iths.se' into text field 'id:email'.</msg>
+<status status="PASS" endtime="20200302 23:12:21.240" starttime="20200302 23:12:18.061"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:21.241" starttime="20200302 23:12:18.059"></status>
+</kw>
+<kw name="Enter Password" library="keywords">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:21.243" level="INFO">Typing text 'tingting' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20200302 23:12:24.379" starttime="20200302 23:12:21.242"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:24.380" starttime="20200302 23:12:21.241"></status>
+</kw>
+<kw name="Click Login Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:login</arg>
+</arguments>
+<msg timestamp="20200302 23:12:24.381" level="INFO">Clicking button 'id:login'.</msg>
+<status status="PASS" endtime="20200302 23:12:30.137" starttime="20200302 23:12:24.381"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:30.137" starttime="20200302 23:12:24.380"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:30.138" starttime="20200302 23:12:18.058"></status>
+</kw>
+<kw name="Given Booking" library="keywords">
+<kw name="Continue Button" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:continue</arg>
+</arguments>
+<msg timestamp="20200302 23:12:30.141" level="INFO">Clicking button 'id:continue'.</msg>
+<status status="PASS" endtime="20200302 23:12:36.046" starttime="20200302 23:12:30.141"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:12:36.046" starttime="20200302 23:12:30.140"></status>
+</kw>
+<kw name="Select Car" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-1']//button</arg>
+</arguments>
+<msg timestamp="20200302 23:12:36.048" level="INFO">Clicking button 'xpath://div[@id='ms-list-1']//button'.</msg>
+<status status="PASS" endtime="20200302 23:12:41.178" starttime="20200302 23:12:36.047"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<assign>
+<var>${CAR DICT}</var>
+</assign>
+<msg timestamp="20200302 23:12:41.179" level="INFO">${CAR DICT} = {}</msg>
+<status status="PASS" endtime="20200302 23:12:41.180" starttime="20200302 23:12:41.178"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Audi</arg>
+<arg>2</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:41.181" starttime="20200302 23:12:41.180"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Opel</arg>
+<arg>9</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:41.182" starttime="20200302 23:12:41.181"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Tesla</arg>
+<arg>7</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:41.183" starttime="20200302 23:12:41.182"></status>
+</kw>
+<kw name="Set To Dictionary" library="Collections">
+<doc>Adds the given ``key_value_pairs`` and ``items`` to the ``dictionary``.</doc>
+<arguments>
+<arg>${CarDict}</arg>
+<arg>Volvo</arg>
+<arg>5</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:12:41.184" starttime="20200302 23:12:41.183"></status>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>random.choice(list(${CAR DICT}.keys()))</arg>
+<arg>modules=random</arg>
+</arguments>
+<assign>
+<var>${random_car}</var>
+</assign>
+<msg timestamp="20200302 23:12:41.185" level="INFO">${random_car} = Tesla</msg>
+<status status="PASS" endtime="20200302 23:12:41.185" starttime="20200302 23:12:41.184"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${random_car}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:41.186" level="INFO">Selecting checkbox 'Tesla'.</msg>
+<status status="PASS" endtime="20200302 23:12:45.322" starttime="20200302 23:12:41.186"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-1']//button</arg>
+</arguments>
+<assign>
+<var>${car_name}</var>
+</assign>
+<msg timestamp="20200302 23:12:47.367" level="INFO">${car_name} = Tesla</msg>
+<status status="PASS" endtime="20200302 23:12:47.368" starttime="20200302 23:12:45.323"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://div[@id='ms-list-2']//button</arg>
+</arguments>
+<msg timestamp="20200302 23:12:47.369" level="INFO">Clicking button 'xpath://div[@id='ms-list-2']//button'.</msg>
+<status status="PASS" endtime="20200302 23:12:52.493" starttime="20200302 23:12:47.368"></status>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${CAR DICT}</arg>
+<arg>${car_name}</arg>
+</arguments>
+<assign>
+<var>${car_seats}</var>
+</assign>
+<msg timestamp="20200302 23:12:52.494" level="INFO">${car_seats} = 7</msg>
+<status status="PASS" endtime="20200302 23:12:52.494" starttime="20200302 23:12:52.493"></status>
+</kw>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<arguments>
+<arg>${car_seats}</arg>
+</arguments>
+<msg timestamp="20200302 23:12:52.495" level="INFO">Selecting checkbox '7'.</msg>
+<status status="PASS" endtime="20200302 23:12:56.614" starttime="20200302 23:12:52.495"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:carSelect1</arg>
+</arguments>
+<msg timestamp="20200302 23:12:56.615" level="INFO">Clicking button 'id:carSelect1'.</msg>
+<status status="PASS" endtime="20200302 23:13:00.228" starttime="20200302 23:12:56.614"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:00.229" starttime="20200302 23:12:36.047"></status>
+</kw>
+<kw name="Booking Confirm" library="keywords">
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:cardNum</arg>
+<arg>1234567890123456</arg>
+</arguments>
+<msg timestamp="20200302 23:13:00.230" level="INFO">Typing text '1234567890123456' into text field 'id:cardNum'.</msg>
+<status status="PASS" endtime="20200302 23:13:03.397" starttime="20200302 23:13:00.230"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:fullName</arg>
+<arg>ting</arg>
+</arguments>
+<msg timestamp="20200302 23:13:03.398" level="INFO">Typing text 'ting' into text field 'id:fullName'.</msg>
+<status status="PASS" endtime="20200302 23:13:06.529" starttime="20200302 23:13:03.397"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:cvc</arg>
+<arg>123</arg>
+</arguments>
+<msg timestamp="20200302 23:13:06.530" level="INFO">Typing text '123' into text field 'id:cvc'.</msg>
+<status status="PASS" endtime="20200302 23:13:09.659" starttime="20200302 23:13:06.530"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:confirm</arg>
+</arguments>
+<msg timestamp="20200302 23:13:09.660" level="INFO">Clicking button 'id:confirm'.</msg>
+<status status="PASS" endtime="20200302 23:13:15.081" starttime="20200302 23:13:09.660"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:15.081" starttime="20200302 23:13:00.229"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:15.082" starttime="20200302 23:12:30.139"></status>
+</kw>
+<kw name="When Verify Error in New Tab" library="keywords">
+<kw name="Get Location" library="SeleniumLibrary">
+<doc>Returns the current browser window URL.</doc>
+<assign>
+<var>${linkLog}</var>
+</assign>
+<msg timestamp="20200302 23:13:16.094" level="INFO">${linkLog} = http://rental7.infotiv.net/webpage/html/gui/updateAvailability.php?fullName=ting</msg>
+<status status="PASS" endtime="20200302 23:13:16.094" starttime="20200302 23:13:15.084"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.open()</arg>
+</arguments>
+<msg timestamp="20200302 23:13:16.098" level="INFO">Executing JavaScript:
+window.open()
+Without any arguments.</msg>
+<status status="PASS" endtime="20200302 23:13:17.124" starttime="20200302 23:13:16.095"></status>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<doc>Switches to browser window matching ``locator``.</doc>
+<arguments>
+<arg>locator=NEW</arg>
+</arguments>
+<status status="PASS" endtime="20200302 23:13:21.150" starttime="20200302 23:13:17.124"></status>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${linkLog}</arg>
+</arguments>
+<msg timestamp="20200302 23:13:21.151" level="INFO">Opening url 'http://rental7.infotiv.net/webpage/html/gui/updateAvailability.php?fullName=ting'</msg>
+<status status="PASS" endtime="20200302 23:13:22.447" starttime="20200302 23:13:21.151"></status>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<arguments>
+<arg>id:questionTextSmall</arg>
+<arg>Unfortunately your selected car became unavailable during your booking. Please go back to car selection and try again.</arg>
+</arguments>
+<msg timestamp="20200302 23:13:24.490" level="INFO">Element 'id:questionTextSmall' contains text 'Unfortunately your selected car became unavailable during your booking. Please go back to car selection and try again.'.</msg>
+<status status="PASS" endtime="20200302 23:13:24.490" starttime="20200302 23:13:22.447"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:24.491" starttime="20200302 23:13:15.083"></status>
+</kw>
+<kw name="Go to My Page" library="keywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id:mypage</arg>
+</arguments>
+<msg timestamp="20200302 23:13:24.493" level="INFO">Clicking button 'id:mypage'.</msg>
+<status status="PASS" endtime="20200302 23:13:29.826" starttime="20200302 23:13:24.492"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:29.826" starttime="20200302 23:13:24.491"></status>
+</kw>
+<kw name="Then Verify Car Booked" library="keywords">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>id:order1</arg>
+</arguments>
+<msg timestamp="20200302 23:13:31.881" level="INFO">Element 'id:order1' is displayed.</msg>
+<status status="PASS" endtime="20200302 23:13:31.882" starttime="20200302 23:13:29.828"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:31.882" starttime="20200302 23:13:29.827"></status>
+</kw>
+<kw type="teardown" name="End Web Test" library="keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20200302 23:13:32.940" starttime="20200302 23:13:31.882"></status>
+</kw>
+<status status="PASS" endtime="20200302 23:13:32.941" starttime="20200302 23:13:31.882"></status>
+</kw>
+<tags>
+<tag>Successful Booking</tag>
+</tags>
+<status status="PASS" endtime="20200302 23:13:32.941" critical="yes" starttime="20200302 23:12:10.451"></status>
+</test>
+<doc>This is information about testsuite for Infotiv car rental</doc>
+<status status="PASS" endtime="20200302 23:13:32.944" starttime="20200302 23:08:36.574"></status>
+</suite>
+<status status="PASS" endtime="20200302 23:13:32.950" starttime="20200302 23:08:36.556"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="8">Critical Tests</stat>
+<stat fail="0" pass="8">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="1">Car Selection</stat>
+<stat fail="0" pass="3">Date Selection</stat>
+<stat fail="0" pass="3">Header Log in</stat>
+<stat fail="0" pass="1">Successful Booking</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Tests" pass="8">Tests</stat>
+<stat fail="0" id="s1-s1" name="Infotiv" pass="8">Tests.Infotiv</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
