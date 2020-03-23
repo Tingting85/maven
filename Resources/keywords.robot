@@ -59,6 +59,7 @@ Select Car
     Click Button             xpath://div[@id='ms-list-2']//button
     ${car_seats}=            Get From Dictionary     ${CAR DICT}      ${car_name}
     Select Checkbox          ${car_seats}
+    Click Button             xpath://div[@id='ms-list-2']//button
     Wait Until Element Is visible   id:carSelect1
     Click Button             id:carSelect1
 
