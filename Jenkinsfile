@@ -58,7 +58,7 @@ pipeline {
     }
     post {
          always {
-            cobertura coberturaReportFile: '*/.xml'
+            cobertura coberturaReportFile: '**/target/site/cobertura/*.xml'
             junit '**/TEST*.xml'
             emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
             body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
