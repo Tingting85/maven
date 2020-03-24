@@ -58,24 +58,24 @@ Invalid End Date
           Continue Button
      Then Wait until element is visible       CSS:#end:invalid
 
-Book A Car and Cancel Booking
-    [Documentation]  Tests the car selecting function to successfully book a car and cancel booking afterwards
-    [Tags]  Car Selection
+#Book A Car and Cancel Booking
+    #[Documentation]  Tests the car selecting function to successfully book a car and cancel booking afterwards
+    #[Tags]  Car Selection
           #Go to Web Page
           #Login   ${VALID EMAIL}      ${VALID PASSWORD}
-    Given Booking
-     When Go to My Page
-     Then Cancel Booking Verified
+    #Given Booking
+     #When Go to My Page
+     #Then Cancel Booking Verified
 
-Car Booked Error Message
-    [Documentation]  Tests the booking function get to the successful booking page in a new window
-    [Tags]  Successful Booking
+#Car Booked Error Message
+    #[Documentation]  Tests the booking function get to the successful booking page in a new window
+    #[Tags]  Successful Booking
          #Go to Web Page
          #Login   ${VALID EMAIL}      ${VALID PASSWORD}
-    Given Booking
-     When Verify Error in New Tab
-          Go to My Page
-     Then Verify Car Booked
+    #Given Booking
+     #When Verify Error in New Tab
+          #Go to My Page
+     #Then Verify Car Booked
 
 
 
