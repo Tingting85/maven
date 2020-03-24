@@ -21,6 +21,9 @@ pipeline {
                 }
             }
         }
+        stage ("Extract test results") {
+            cobertura coberturaReportFile: 'path-to/coverage.xml'
+        }
         stage('newman') {
             steps {
                  sh 'newman run Restful_Booker.postman_collection_labb.json --environment Restful_Booker.postman_environment_labb.json --reporters junit'
