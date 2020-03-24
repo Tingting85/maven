@@ -9,7 +9,7 @@ public class DummyTest {
     }
     @Test
     void testDummy2(){
-        assertEquals(false,Dummy.dummyMethod2());
+        assertEquals(false,Dummy.dummyMethod());
     }
 }
 

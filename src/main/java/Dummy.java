@@ -3,8 +3,8 @@ public class Dummy {
             return true;
         }
 
-        public static boolean dummyMethod2(){
-        return false;
+        //public static boolean dummyMethod2(){
+        //return false;
     }
 }
 
