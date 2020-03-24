@@ -60,7 +60,7 @@ Select Car
     ${car_seats}=            Get From Dictionary     ${CAR DICT}      ${car_name}
     Select Checkbox          ${car_seats}
     Click Button             xpath://div[@id='ms-list-2']//button
-    Wait Until Element Is visible   id:carSelect1
+    Sleep                    5
     Click Button             id:carSelect1
 
 Booking Confirm
