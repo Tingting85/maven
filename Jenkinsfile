@@ -15,11 +15,7 @@ pipeline {
             steps {
                 sh "mvn test"
         }
-            post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            }
+
         }
         stage('cobertura'){
             steps{
@@ -31,11 +27,7 @@ pipeline {
             steps {
                  sh 'newman run Restful_Booker.postman_collection_labb.json --environment Restful_Booker.postman_environment_labb.json --reporters junit'
              }
-            post {
-                always {
-                    junit '**/*xml'
-                        }
-                }
+
             }
         stage('robot') {
                     steps {
@@ -64,7 +56,7 @@ pipeline {
     }
     post {
          always {
-            junit '**/TEST*.xml'
+            
             step([$class: 'CoberturaPublisher', autoUpdateHealth: false, autoUpdateStability: false, coberturaReportFile: '**/coverage.xml', failUnhealthy: false, failUnstable: false, maxNumberOfBuilds: 0, onlyStable: false, sourceEncoding: 'ASCII', zoomCoverageChart: false])
             emailext attachLog: true, attachmentsPattern: '**/TEST*xml',
             body: 'Bod-DAy!', recipientProviders: [culprits()], subject:
